@@ -1,13 +1,9 @@
-function Swarm(ctx, toolbox, cursorModel, mirrorModel) {
+function Painter(ctx, toolbox, cursorModel, mirrorModel) {
+    var painter = this;
     var canvas = ctx.canvas;
     var pointers = [];
 
     var manager = new PointerManager();
-
-    this.swarmSize = 1;
-
-    this.spreadRange = 0;
-    this.scaleRange = 0;
 
     canvas.addEventListener("az-dragStart", function shiva(event) {
         // Destroy all existing life
@@ -22,7 +18,7 @@ function Swarm(ctx, toolbox, cursorModel, mirrorModel) {
             toolbox.activeBrush().draw(ctx, this);
         }
 
-        for (var i = 0; i < swarm.swarmSize; i++) {
+        for (var i = 0; i < cursorModel.getSwarmSize(); i++) {
             // Create anew
             var CursorConstructor = cursorModel.selectedCursor();
             var pointer = new CursorConstructor(event.offsetX, event.offsetY);

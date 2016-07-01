@@ -41,4 +41,4 @@ mirrorModel.addMirror("mirror_diagonally", "diagonal");
 mirrorModel.addMirror("mirror_all", "4-way");
 var mirrorController = new MirrorController(mirrorModel);
 
-var swarm = new Swarm(ctx, toolbox, cursorModel, mirrorModel);
+var painter = new Painter(ctx, toolbox, cursorModel, mirrorModel);
