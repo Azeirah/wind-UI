@@ -1,0 +1,15 @@
+{
+  "name": "wind-paint",
+  "version": "1.0.0",
+  "description": "Wind is a library part of my ongoing exploration of the computer as a digital art form, wind-paint is the UI-layer built on top of wind.w",
+  "main": "index.js",
+  "dependencies": {
+    "az-wind": "0.1.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
