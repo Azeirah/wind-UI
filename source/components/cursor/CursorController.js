@@ -26,17 +26,16 @@ function CursorController(cursorModel) {
 
     function setOffset() {
         var offset = parseInt(tag_offset.value);
-        cursorModel.adjustOffset(offset);
+        cursorModel.adjustOffset([offset, offset]);
     }
 
     function setScale() {
-        var scale = parseInt(tag_scale.value);
+        var scale = parseFloat(tag_scale.value);
         cursorModel.adjustScale(scale);
     }
 
     function setRotation() {
-        var rotation = parseInt(tag_rotation.value);
-        console.log(rotation);
+        var rotation = parseFloat(tag_rotation.value);
         cursorModel.adjustRotation(rotation);
     }
 

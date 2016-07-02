@@ -36,8 +36,8 @@ CursorModel.prototype.adjustOffset = function (offset) {
     this.offset = offset;
 };
 
-CursorModel.prototype.getOffset = function (offset) {
-    return this.ofset;
+CursorModel.prototype.getOffset = function () {
+    return this.offset;
 };
 
 CursorModel.prototype.adjustScale = function(scale) {

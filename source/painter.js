@@ -58,9 +58,10 @@ function Painter(ctx, toolbox, cursorModel, mirrorModel) {
                     pointer.setRotation((Math.random() - 0.5) * cursorModel.getRotation());
                 }
 
-                // if (pointer.offsetX === 0 && pointer.offsetY === 0) {
-                    // pointer.setOff?
-                // }
+                if (pointer.offsetX === 0 && pointer.offsetY === 0) {
+                    var offset = cursorModel.getOffset();
+                    pointer.setOffset((Math.random() - 0.5) * offset[0], (Math.random() - 0.5) * offset[1]);
+                }
             }
         }
     });
