@@ -4,7 +4,7 @@
   "description": "Wind is a library part of my ongoing exploration of the computer as a digital art form, wind-paint is the UI-layer built on top of wind.w",
   "main": "index.js",
   "dependencies": {
-    "az-wind": "0.1.7"
+    "az-wind": "0.1.8"
   },
   "devDependencies": {},
   "scripts": {
