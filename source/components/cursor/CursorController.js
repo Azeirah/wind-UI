@@ -1,17 +1,24 @@
 function CursorController(cursorModel) {
-    var tag_cursor   = document.querySelector("#cursor");
-    var tag_offset   = document.querySelector("#swarm_offset");
-    var tag_spread   = document.querySelector("#swarm_spread");
-    var tag_rotation = document.querySelector("#swarm_rotation");
+    var tag_cursor    = document.querySelector("#cursor");
+    var tag_swarmSize = document.querySelector("#swarm_size");
+    var tag_offset    = document.querySelector("#swarm_offset");
+    var tag_scale     = document.querySelector("#swarm_scale");
+    var tag_rotation  = document.querySelector("#swarm_rotation");
 
     setCursor();
     tag_cursor.addEventListener("change", setCursor);
+
+    setSwarmSize();
+    tag_swarmSize.addEventListener("change", setSwarmSize);
+
     setOffset();
     tag_offset.addEventListener("change", setOffset);
-    setSpread();
-    tag_offset.addEventListener("change", setSpread);
+
+    setScale();
+    tag_scale.addEventListener("change", setScale);
+
     setRotation();
-    tag_offset.addEventListener("change", setRotation);
+    tag_rotation.addEventListener("change", setRotation);
 
     function setCursor() {
         cursorModel.selectCursor(tag_cursor.options[tag_cursor.selectedIndex].value);
@@ -22,13 +29,19 @@ function CursorController(cursorModel) {
         cursorModel.adjustOffset(offset);
     }
 
-    function setSpread() {
-        var spread = parseInt(tag_spread.value);
-        cursorModel.adjustSpread(spread);
+    function setScale() {
+        var scale = parseInt(tag_scale.value);
+        cursorModel.adjustScale(scale);
     }
 
     function setRotation() {
         var rotation = parseInt(tag_rotation.value);
+        console.log(rotation);
         cursorModel.adjustRotation(rotation);
+    }
+
+    function setSwarmSize() {
+        var swarmSize = parseInt(tag_swarmSize.value);
+        cursorModel.adjustSwarmSize(swarmSize);
     }
 }

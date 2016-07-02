@@ -4,7 +4,7 @@ function CursorModel() {
 
     this.swarmSize = 1;
     this.offset = 0;
-    this.spread = 0;
+    this.scale = 0;
     this.rotation = 0;
 }
 
@@ -40,9 +40,13 @@ CursorModel.prototype.getOffset = function (offset) {
     return this.ofset;
 };
 
-CursorModel.prototype.adjustSpread = function(spread) {
-    this.spread = spread;
+CursorModel.prototype.adjustScale = function(scale) {
+    this.scale = scale;
 };
+
+CursorModel.prototype.getScale = function () {
+    return this.scale;
+}
 
 CursorModel.prototype.adjustRotation = function(rotation) {
     this.rotation = rotation;
