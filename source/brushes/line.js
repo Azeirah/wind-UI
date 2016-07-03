@@ -1,4 +1,4 @@
-function Line(ctx, toolbox) {
+function Line(ctx) {
     var pointer;
 
 	this.draw = function draw(ctx, pointer) {
@@ -13,8 +13,10 @@ function Line(ctx, toolbox) {
     this.beforeDrawing = function (event) {
         ctx.lineJoin = "round";
         ctx.lineCap  = "round";
-        ctx.lineWidth = 5;
+        ctx.lineWidth = this.parameters.thickness;
+    };
+
+    this.parameters = {
+        thickness: 5
     };
 }
-
-toolbox.addNewBrush(Line);

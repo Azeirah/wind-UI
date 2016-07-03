@@ -23,7 +23,6 @@ function initializeCanvas(parent) {
 }
 
 var ctx            = initializeCanvas(parent);
-var toolbox        = new Toolbox(ctx);
 
 var cursorModel = new CursorModel();
 // set up the model
@@ -41,4 +40,8 @@ mirrorModel.addMirror("mirror_diagonally", "diagonal");
 mirrorModel.addMirror("mirror_all", "4-way");
 var mirrorController = new MirrorController(mirrorModel);
 
-var painter = new Painter(ctx, toolbox, cursorModel, mirrorModel);
+var brushModel = new BrushModel(ctx);
+brushModel.registerBrush("Line", Line);
+var brushController = new BrushController(ctx, brushModel);
+
+var painter = new Painter(ctx, brushModel, cursorModel, mirrorModel);

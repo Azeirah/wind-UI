@@ -1,4 +1,4 @@
-function Painter(ctx, toolbox, cursorModel, mirrorModel) {
+function Painter(ctx, brushModel, cursorModel, mirrorModel) {
     var painter = this;
     var canvas = ctx.canvas;
     var pointers = [];
@@ -15,7 +15,7 @@ function Painter(ctx, toolbox, cursorModel, mirrorModel) {
         }
 
         function drawFn () {
-            toolbox.activeBrush().draw(ctx, this);
+            brushModel.activeBrush().draw(ctx, this);
         }
 
         for (var i = 0; i < cursorModel.getSwarmSize(); i++) {
@@ -38,7 +38,7 @@ function Painter(ctx, toolbox, cursorModel, mirrorModel) {
         }
 
         if (event.which === MOUSE.left) {
-            toolbox.activeBrush().beforeDrawing();
+            brushModel.activeBrush().beforeDrawing();
         }
     });
 

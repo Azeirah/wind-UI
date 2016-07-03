@@ -17,13 +17,15 @@
     <script src="source/components/cursor/CursorController.js"></script>
     <script src="source/components/cursor/CursorModel.js"></script>
 
+    <script src="source/components/brush/BrushController.js"></script>
+    <script src="source/components/brush/BrushModel.js"></script>
+
     <!-- libraries -->
     <script src="lib/dragEvent.js"></script>
     <script src="node_modules/az-wind/dist/wind.js"></script>
 
     <!-- application-specific -->
     <script src="source/shims.js"></script>
-    <script src="source/toolbox.js"></script>
 </head>
 <body>
     <div class="container-fluid">
@@ -36,6 +38,10 @@
             </div>
             <div class="col-lg-3 brush">
                 <h4>Brush settings</h4>
+                <label for="brush-select">Select a brush</label>
+                <select name="brush-select" id="brush-select">
+                    <option value="Line">Line</option>
+                </select>
             </div>
             <div class="col-lg-3 pointer">
                 <h4>Pointer settings</h4>
@@ -89,10 +95,10 @@
         </div>
     </div>
 
-    <script src="source/index.js"></script>
-
     <!-- brushes -->
-    <script src="source/brushes/pencil.js"></script>
+    <script src="source/brushes/line.js"></script>
     <script src="source/brushes/eraser.js"></script>
+
+    <script src="source/index.js"></script>
 </body>
 </html>
