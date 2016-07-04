@@ -42,6 +42,7 @@ var mirrorController = new MirrorController(mirrorModel);
 
 var brushModel = new BrushModel(ctx);
 brushModel.registerBrush("Line", Line);
+brushModel.registerBrush("Lines", Lines);
 var brushController = new BrushController(ctx, brushModel);
 
 var painter = new Painter(ctx, brushModel, cursorModel, mirrorModel);
