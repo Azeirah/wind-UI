@@ -38,7 +38,10 @@ function Painter(ctx, brushModel, cursorModel, mirrorModel) {
         }
 
         if (event.which === MOUSE.left) {
-            brushModel.activeBrush().beforeDrawing();
+            var brush = brushModel.activeBrush();
+            if (brush.beforeDrawing) {
+                brush.beforeDrawing();
+            }
         }
     });
 
