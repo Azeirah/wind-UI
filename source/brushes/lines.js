@@ -11,7 +11,7 @@ function Lines(ctx) {
                 ctx.stroke();
             }
         }
-    }
+    };
 
     this.parameters = {
         lineCount: 5,
