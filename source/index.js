@@ -22,7 +22,11 @@ function initializeCanvas(parent) {
     return ctx;
 }
 
-var ctx            = initializeCanvas(parent);
+var editor = CodeMirror.fromTextArea(document.querySelector(".color-script"), {
+    mode: "javascript"
+});
+
+var ctx = initializeCanvas(parent);
 
 var cursorModel = new CursorModel();
 // set up the model
@@ -47,4 +51,10 @@ brushModel.registerBrush("Circle", Circle);
 brushModel.registerBrush("Diamond", Diamond);
 var brushController = new BrushController(ctx, brushModel);
 
-var painter = new Painter(ctx, brushModel, cursorModel, mirrorModel);
+var colorModel = new ColorModel(ctx);
+colorModel.registerScript("black", function () {
+    return "black"
+});
+var colorController = new ColorController(colorModel, editor);
+
+var painter = new Painter(ctx, brushModel, cursorModel, mirrorModel, colorModel);

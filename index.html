@@ -10,6 +10,14 @@
 
     <script src="source/painter.js"></script>
 
+    <!-- codemirror -->
+    <script src="vendor/CodeMirror/lib/codemirror.js"></script>
+    <link rel="stylesheet" href="vendor/CodeMirror/lib/codemirror.css">
+    <script src="vendor/CodeMirror/mode/javascript/javascript.js"></script>
+
+    <!-- spectra, for colors -->
+    <script src="vendor/spectra.min.js"></script>
+
     <!-- components -->
     <script src="source/components/mirror/MirrorController.js"></script>
     <script src="source/components/mirror/MirrorModel.js"></script>
@@ -19,6 +27,9 @@
 
     <script src="source/components/brush/BrushController.js"></script>
     <script src="source/components/brush/BrushModel.js"></script>
+
+    <script src="source/components/color/colorController.js"></script>
+    <script src="source/components/color/colorModel.js"></script>
 
     <!-- libraries -->
     <script src="source/controlsFromJson.js"></script>
@@ -36,6 +47,12 @@
         <div class="row ui">
             <div class="col-lg-3">
                 <h4>Color settings</h4>
+                    <textarea cols="50" rows="7" style="height: 150px;" class="color-script">// return a color, you can use pointer.speed,
+// .lifetime and .origin
+// the spectra color library is available too
+function color(pointer) {
+    return "black";
+}</textarea>
             </div>
             <div class="col-lg-3 brush">
                 <h4>Brush settings</h4>

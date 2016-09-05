@@ -10,7 +10,6 @@ function BrushController(ctx, brushModel) {
         brushModel.selectBrush(newBrush);
 
         var params = brushModel.activeBrush().parameters;
-        console.log(params);
         var ui = controlsFromJson(params);
         tag_brushParamsContainer.innerHTML = "";
         tag_brushParamsContainer.appendChild(ui);

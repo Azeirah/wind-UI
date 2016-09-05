@@ -1,4 +1,4 @@
-function Painter(ctx, brushModel, cursorModel, mirrorModel) {
+function Painter(ctx, brushModel, cursorModel, mirrorModel, colorModel) {
     var painter = this;
     var canvas = ctx.canvas;
     var pointers = [];
@@ -15,6 +15,7 @@ function Painter(ctx, brushModel, cursorModel, mirrorModel) {
         }
 
         function drawFn () {
+            ctx.strokeStyle = colorModel.getColorFn()(this);
             brushModel.activeBrush().draw(ctx, this);
         }
 
