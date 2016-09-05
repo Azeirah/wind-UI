@@ -2,6 +2,7 @@ function Painter(ctx, brushModel, cursorModel, mirrorModel, colorModel) {
     var painter = this;
     var canvas = ctx.canvas;
     var pointers = [];
+    var tag_clearbutton = document.querySelector(".clear");
 
     var manager = new PointerManager();
 
@@ -74,6 +75,15 @@ function Painter(ctx, brushModel, cursorModel, mirrorModel, colorModel) {
         manager.freeEntities();
         pointers.forEach(function (pointer) {
             pointer.friction = 0.9;
+        });
+        pointers = [];
+    });
+
+    tag_clearbutton.addEventListener("click", function () {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        manager.freeEntities();
+        manager.entities.forEach(function (p) {
+            p.dead = true;
         });
         pointers = [];
     });
