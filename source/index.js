@@ -52,9 +52,6 @@ brushModel.registerBrush("Diamond", Diamond);
 var brushController = new BrushController(ctx, brushModel);
 
 var colorModel = new ColorModel(ctx);
-colorModel.registerScript("black", function () {
-    return "black"
-});
 var colorController = new ColorController(colorModel, editor);
 
 var painter = new Painter(ctx, brushModel, cursorModel, mirrorModel, colorModel);
