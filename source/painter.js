@@ -17,6 +17,7 @@ function Painter(ctx, brushModel, cursorModel, mirrorModel, colorModel) {
 
         function drawFn () {
             ctx.strokeStyle = colorModel.getColorFn()(this);
+            ctx.fillStyle = colorModel.getColorFn()(this);
             brushModel.activeBrush().draw(ctx, this);
         }
 
