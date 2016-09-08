@@ -13,7 +13,7 @@ ColorModel.prototype.getColorFn = function () {
 };
 
 ColorModel.prototype.serialize = function () {
-    return {colorFn: this.colorFn.toString()};
+    return JSON.stringify({colorFn: this.colorFn.toString()});
 };
 
 ColorModel.prototype.loadFromSerialization = function (data) {
