@@ -28,6 +28,7 @@ function ColorController(colorModel, editor) {
                     colorFn({speed: 10, x: 10, y: 10, lifetime: 10, origin: {x: 10, y: 10}});
                 } catch (e) {
                     onFailedEval();
+                    return;
                 }
                 colorModel.setColorFn(colorFn);
                 onSuccesfulEval();
