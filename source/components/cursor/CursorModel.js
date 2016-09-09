@@ -55,3 +55,21 @@ CursorModel.prototype.adjustRotation = function(rotation) {
 CursorModel.prototype.getRotation = function() {
     return this.rotation;
 };
+
+CursorModel.prototype.serialize = function () {
+    return JSON.stringify({
+        selectedCursorType: this.selectedCursorType,
+        swarmSize: this.swarmSize,
+        offset: this.offset,
+        scale: this.scale,
+        rotation: this.rotation
+    });
+};
+
+CursorModel.prototype.loadFromSerialization = function (data) {
+    this.selectedCursorType = data.selectedCursorType;
+    this.swarmSize          = data.swarmSize;
+    this.offset             = data.offset;
+    this.scale              = data.scale;
+    this.rotation           = data.rotation;
+};
