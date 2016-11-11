@@ -10,6 +10,9 @@
 
     <script src="source/painter.js"></script>
 
+    <!-- uri parser -->
+    <script src="vendor/uri.js"></script>
+
     <!-- codemirror -->
     <script src="vendor/CodeMirror/lib/codemirror.js"></script>
     <link rel="stylesheet" href="vendor/CodeMirror/lib/codemirror.css">
@@ -67,6 +70,7 @@ function color(pointer) {
                     <option value="Lines">Lines</option>
                     <option value="Circle">Circle</option>
                     <option value="Diamond">Diamond</option>
+                    <option value="Sandline">Sand line</option>
                 </select>
                 <div class="brush-params"></div>
             </div>
@@ -123,10 +127,12 @@ function color(pointer) {
     </div>
 
     <!-- brushes -->
+    <script src="source/brushParams.js"></script>
     <script src="source/brushes/line.js"></script>
     <script src="source/brushes/lines.js"></script>
     <script src="source/brushes/circle.js"></script>
     <script src="source/brushes/diamond.js"></script>
+    <script src="source/brushes/sandline.js"></script>
 
     <script src="source/index.js"></script>
 </body>
