@@ -36,7 +36,7 @@ function Painter(ctx, brushModel, cursorModel, mirrorModel, colorModel) {
 
             if (mirrorModel.selectedMirror()) {
                 pointer.setDrawingFunction(drawFn);
-                mirror(pointer, mirrorModel.selectedMirror(), mirrorModel.selectedMirroringType());
+                mirror(pointer, mirrorModel.selectedMirror(), mirrorModel.selectedMirroringType);
             }
         }
 

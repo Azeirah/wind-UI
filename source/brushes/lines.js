@@ -2,12 +2,14 @@ function Lines(ctx) {
     var self = this;
 
     this.draw = function (ctx, pointer) {
-        var stepSize = self.parameters.lineWidth / self.parameters.lineCount;
+        var params = evalBrushParams(self.parameters, pointer);
+        var stepSize = params.lineWidth / params.lineCount;
+
         if (pointer.previousPosition) {
-            for (var i = 0; i < self.parameters.lineCount; i++) {
+            for (var i = 0; i < params.lineCount; i++) {
                 ctx.beginPath();
-                ctx.moveTo(pointer.previousPosition.x - self.parameters.lineWidth/2 + stepSize * i, pointer.previousPosition.y);
-                ctx.lineTo(pointer.x - self.parameters.lineWidth/2 + stepSize * i, pointer.y);
+                ctx.moveTo(pointer.previousPosition.x - params.lineWidth/2 + stepSize * i, pointer.previousPosition.y);
+                ctx.lineTo(pointer.x - params.lineWidth/2 + stepSize * i, pointer.y);
                 ctx.stroke();
             }
         }

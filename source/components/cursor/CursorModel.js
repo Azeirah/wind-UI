@@ -57,13 +57,13 @@ CursorModel.prototype.getRotation = function() {
 };
 
 CursorModel.prototype.serialize = function () {
-    return JSON.stringify({
+    return {
         selectedCursorType: this.selectedCursorType,
         swarmSize: this.swarmSize,
         offset: this.offset,
         scale: this.scale,
         rotation: this.rotation
-    });
+    };
 };
 
 CursorModel.prototype.loadFromSerialization = function (data) {

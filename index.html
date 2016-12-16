@@ -73,6 +73,8 @@ function color(pointer) {
                     <option value="Sandline">Sand line</option>
                 </select>
                 <div class="brush-params"></div>
+                <br>
+                <p>Note that it's possible to use the pointer in the brush parameters. For example, to make the circle brush scale with speed, type <code>2 * pointer.speed</code></p>
             </div>
             <div class="col-lg-3 pointer">
                 <h4>Pointer settings</h4>
@@ -118,7 +120,7 @@ function color(pointer) {
                             <option value="mirror_diagonally">Mirror diagonally </option>
                             <option value="mirror_all">Mirror 4-way</option>
                         </select></label>
-                        <label for="mirror_local">Check for kaleidoscopic mirroring, uncheck for butterfly-like mirroring: <input id="mirror_local" type="checkbox"></label>
+                        <label for="mirror_local">Check for butterfly mirroring, uncheck for kaleidoscopic mirroring: <input id="mirror_local" type="checkbox"></label>
                 </form>
                 <h4>Clear the screen</h4>
                 <button class="clear">Clear</button>

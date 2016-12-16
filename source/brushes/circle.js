@@ -1,7 +1,10 @@
 function Circle(ctx) {
+    var self = this;
+
     this.draw = function (ctx, pointer) {
+        var params = evalBrushParams(self.parameters, pointer);
         ctx.beginPath();
-        ctx.arc(pointer.x, pointer.y, pointer.speed, 0, 2 * Math.PI);
+        ctx.arc(pointer.x, pointer.y, params.radius, 0, 2 * Math.PI);
         ctx.fill();
     };
 
@@ -10,6 +13,6 @@ function Circle(ctx) {
     };
 
     this.parameters = {
-
+        radius: 5
     };
 }

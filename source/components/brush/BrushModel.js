@@ -29,16 +29,16 @@ BrushModel.prototype.serialize = function () {
         };
     }
 
-    var preSerialization = {
+    var serialized = {
         selectedBrush: this.selectedBrush,
         brushes: {}
     };
 
     for (var brushName in this.brushes) {
-        preSerialization.brushes[brushName] = preSerializeBrush(brushName, this.brushes[brushName]);
+        serialized.brushes[brushName] = preSerializeBrush(brushName, this.brushes[brushName]);
     }
 
-    return JSON.stringify(preSerialization);
+    return serialized;
 };
 
 BrushModel.prototype.loadFromSerialization = function (data) {

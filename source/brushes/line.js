@@ -1,7 +1,10 @@
 function Line(ctx) {
     var pointer;
+    var self = this;
 
 	this.draw = function draw(ctx, pointer) {
+        var params = evalBrushParams(self.parameters, pointer);
+        ctx.lineWidth = params.thickness;
         if (pointer.previousPosition) {
             ctx.beginPath();
             ctx.moveTo(pointer.previousPosition.x, pointer.previousPosition.y);
@@ -13,7 +16,6 @@ function Line(ctx) {
     this.beforeDrawing = function (event) {
         ctx.lineJoin = "round";
         ctx.lineCap  = "round";
-        ctx.lineWidth = this.parameters.thickness;
     };
 
     this.parameters = {

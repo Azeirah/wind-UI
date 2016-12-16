@@ -20,18 +20,14 @@ MirrorModel.prototype.selectedMirror = function () {
 
 // mirroringtype = local/global mirroring
 MirrorModel.prototype.selectMirroringType = function (mirroringType) {
-    this.mirroringType = mirroringType;
-};
-
-MirrorModel.prototype.selectedMirroringType = function () {
-    return this.mirroringType;
+    this.selectedMirroringType = mirroringType;
 };
 
 MirrorModel.prototype.serialize = function () {
-    return JSON.stringify({
+    return {
         selectedMirrorType: this.selectedMirrorType,
         selectedMirroringType: this.selectedMirroringType
-    });
+    };
 };
 
 MirrorModel.prototype.loadFromSerialization = function (data) {
